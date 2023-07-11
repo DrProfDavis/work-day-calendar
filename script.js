@@ -24,47 +24,104 @@ $(function () {
   const date = new Date();
   let currentDate = document.getElementById('currentDay');
   let currentTime = document.getElementById('currentTime');
-  // var currentDateEl = document.getElementById('currentDay');
+  var hour9Text = document.getElementById('hour-9');
+  var hour10Text = document.getElementById('hour-10');
+  var hour11Text = document.getElementById('hour-11');
+  var hour12Text = document.getElementById('hour-12');
+  var hour13Text = document.getElementById('hour-13');
+  var hour14Text = document.getElementById('hour-14');
+  var hour15Text = document.getElementById('hour-15');
+  var hour16Text = document.getElementById('hour-16');
+  var hour17Text = document.getElementById('hour-17');
 
   let minutes = date.getMinutes();
-  let hours = date.getHours();
+  let hour = date.getHours();
   let day = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
 
-  // month selector
-  if (month == 0){ month = "January"}
-  if (month == 1){ month = "February"}
-  if (month == 2){ month = "March"}
-  if (month == 3){ month = "April"}
-  if (month == 4){ month = "May"}
-  if (month == 5){ month = "June"}
-  if (month == 6){ month = "July"}
-  if (month == 7){ month = "August"}
-  if (month == 8){ month = "September"}
-  if (month == 9){ month = "October"}
-  if (month == 10){ month = "November"}
-  if (month == 11){ month = "December"}
+  // Turns numbers into words
+  if (month == 0){ wordMonth = "January"}
+  if (month == 1){ wordMonth = "February"}
+  if (month == 2){ wordMonth = "March"}
+  if (month == 3){ wordMonth = "April"}
+  if (month == 4){ wordMonth = "May"}
+  if (month == 5){ wordMonth = "June"}
+  if (month == 6){ wordMonth = "July"}
+  if (month == 7){ wordMonth = "August"}
+  if (month == 8){ wordMonth = "September"}
+  if (month == 9){ wordMonth = "October"}
+  if (month == 10){ wordMonth = "November"}
+  if (month == 11){ wordMonth = "December"}
 
-  currentDate.innerText = `${month} ${day}, ${year}`;
-  currentTime.innerText = `Time: ${hours}h ${minutes}m`;  
-  console.log(currentDate);
+  // Display current Date and Time
+  currentDate.innerText = `${wordMonth} ${day}, ${year}`;
+  currentTime.innerText = `Time: ${hour}h ${minutes}m`;  
 
-  // compare dates
-  function compareDates(d1, d2) {
-    let date1 = new Date(d1).getTime();
-    let date2 = new Date(d2).getTime();
+  // Set Past, Present, and Future
+  // I know this could be slimmed down with a for loop and I tried but it never worked out
 
-    if (date1 < date2) {
-      console.log(`${d1} is less than ${d2}`);
-    } else if (date1 > date2) {
-      console.log(`${d1} is greater than ${d2}`);
-    } else {
-      console.log(`Both dates are equal`);
-    }
-  };
-  console.log(date);
-  compareDates(currentDate, "07/28/2021");
-  compareDates(currentDate, "01/01/2001");
-  compareDates(currentDate, "02/01/2022");
+  if (hour > 9) {
+    hour9Text.classList.add('past');
+  }else if(hour == 9) {
+    hour9Text.classList.add('present');
+  }else {
+    hour9Text.classList.add('future');
+  }
+  if (hour > 10) {
+    hour10Text.classList.add('past');
+  }else if(hour == 10) {
+    hour10Text.classList.add('present');
+  }else {
+    hour10Text.classList.add('future');
+  }
+  if (hour > 11) {
+    hour11Text.classList.add('past');
+  }else if(hour == 11) {
+    hour11Text.classList.add('present');
+  }else {
+    hour11Text.classList.add('future');
+  }
+  if (hour > 12) {
+    hour12Text.classList.add('past');
+  }else if(hour == 12) {
+    hour12Text.classList.add('present');
+  }else {
+    hour12Text.classList.add('future');
+  }
+  if (hour > 13) {
+    hour13Text.classList.add('past');
+  }else if(hour == 13) {
+    hour13Text.classList.add('present');
+  }else {
+    hour13Text.classList.add('future');
+  }
+  if (hour > 14) {
+    hour14Text.classList.add('past');
+  }else if(hour == 14) {
+    hour14Text.classList.add('present');
+  }else {
+    hour14Text.classList.add('future');
+  }
+  if (hour > 15) {
+    hour15Text.classList.add('past');
+  }else if(hour == 15) {
+    hour15Text.classList.add('present');
+  }else {
+    hour15Text.classList.add('future');
+  }
+  if (hour > 16) {
+    hour16Text.classList.add('past');
+  }else if(hour == 16) {
+    hour16Text.classList.add('present');
+  }else {
+    hour16Text.classList.add('future');
+  }
+  if (hour > 17) {
+    hour17Text.classList.add('past');
+  }else if(hour == 17) {
+    hour17Text.classList.add('present');
+  }else {
+    hour17Text.classList.add('future');
+  }
 });
