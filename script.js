@@ -23,7 +23,10 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
   const date = new Date();
   let currentDate = document.getElementById('currentDay');
+  let currentTime = document.getElementById('currentTime');
   // var currentDateEl = document.getElementById('currentDay');
+
+  let minutes = date.getMinutes();
   let hours = date.getHours();
   let day = date.getDate();
   let month = date.getMonth();
@@ -43,6 +46,25 @@ $(function () {
   if (month == 10){ month = "November"}
   if (month == 11){ month = "December"}
 
-  currentDate.innerText = `${month}-${day}-${year}`;
+  currentDate.innerText = `${month} ${day}, ${year}`;
+  currentTime.innerText = `Time: ${hours}h ${minutes}m`;  
   console.log(currentDate);
+
+  // compare dates
+  function compareDates(d1, d2) {
+    let date1 = new Date(d1).getTime();
+    let date2 = new Date(d2).getTime();
+
+    if (date1 < date2) {
+      console.log(`${d1} is less than ${d2}`);
+    } else if (date1 > date2) {
+      console.log(`${d1} is greater than ${d2}`);
+    } else {
+      console.log(`Both dates are equal`);
+    }
+  };
+  console.log(date);
+  compareDates(currentDate, "07/28/2021");
+  compareDates(currentDate, "01/01/2001");
+  compareDates(currentDate, "02/01/2022");
 });
