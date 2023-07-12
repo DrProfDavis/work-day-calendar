@@ -9,7 +9,7 @@ Algebra quiz
 
 ## Screenshot
 
-![Webpage titled "Algebra Quiz".](./assets/images/screenshot.png)
+![Webpage titled "Work Day Scheduler".](./assets/images/screenshot.png)
 
 ## Link
 
