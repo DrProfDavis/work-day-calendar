@@ -10,6 +10,8 @@ $(document).ready(function () {
   //   localStorage.setItem(hours, text);
   // });
 
+  // The above code breaks all my styling of the website and I dont know why
+
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
